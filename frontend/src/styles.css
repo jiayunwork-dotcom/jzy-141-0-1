@@ -1,0 +1,110 @@
+:root {
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  color: #243042;
+  background: #f5f7fa;
+  font-synthesis: none;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+.app-shell { min-height: 100vh; }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 32px;
+  background: #17243a;
+  color: white;
+  gap: 24px;
+}
+header h1 { margin: 0 0 6px; font-size: 24px; }
+header p { margin: 0; color: #c9d3e2; }
+nav { display: flex; gap: 10px; }
+nav button {
+  border: 1px solid #60708a;
+  color: #dce5f2;
+  background: transparent;
+  border-radius: 8px;
+  padding: 10px 18px;
+}
+nav button.active { background: #2f80ed; border-color: #2f80ed; color: white; }
+.layout { display: grid; grid-template-columns: 320px 1fr; gap: 24px; padding: 24px 32px; }
+.sidebar { display: flex; flex-direction: column; gap: 16px; }
+.sidebar h2, .panel h2, .chart-card h2 { margin: 0 0 14px; font-size: 18px; }
+.series-list { display: flex; flex-direction: column; gap: 8px; max-height: 44vh; overflow: auto; }
+.series-item {
+  text-align: left;
+  border: 1px solid #d9dee7;
+  background: white;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.series-item.active { border-color: #2f80ed; box-shadow: 0 0 0 2px rgba(47,128,237,.15); }
+.series-item span, .muted { color: #738095; font-size: 13px; }
+.upload-box, .panel, .chart-card {
+  background: white;
+  border: 1px solid #e0e5ed;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 8px 28px rgba(21,38,66,.05);
+}
+.upload-box { display: flex; flex-direction: column; gap: 10px; }
+.upload-box h3 { margin: 0; }
+input, select {
+  width: 100%;
+  border: 1px solid #c8d0dc;
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: white;
+}
+.primary {
+  border: none;
+  border-radius: 9px;
+  background: #2f80ed;
+  color: white;
+  padding: 10px 14px;
+  font-weight: 650;
+}
+.primary:disabled { background: #9db6d8; cursor: not-allowed; }
+.content { min-width: 0; }
+.page-grid { display: grid; grid-template-columns: minmax(300px, 420px) minmax(300px, 1fr); gap: 18px; align-items: start; }
+.chart-panel, .wide-panel { grid-column: 1 / -1; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form-grid label, .upload-box input { display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13px; }
+.checkbox { flex-direction: row !important; align-items: center; gap: 8px !important; font-weight: 500 !important; }
+.checkbox input { width: auto; }
+.wide { grid-column: 1 / -1; }
+.param-table, table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+th, td { border-bottom: 1px solid #e6eaf0; padding: 8px 9px; text-align: left; }
+th { color: #647187; font-weight: 700; background: #f8fafc; }
+.best-row { background: #eef6ff; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; }
+.stats h2 { grid-column: 1 / -1; }
+.stats div { display: flex; justify-content: space-between; border-bottom: 1px dashed #e0e5ed; }
+.errors { color: #b42318; padding-left: 18px; margin: 0; }
+.error-text, .banner-error { color: #b42318; }
+.banner-error { padding: 12px 32px; background: #fff0ee; }
+.empty {
+  background: white;
+  border: 1px dashed #b7c1cf;
+  border-radius: 14px;
+  padding: 60px;
+  text-align: center;
+  color: #738095;
+}
+.job { margin: 8px 0 14px; padding: 10px; border-radius: 10px; background: #f3f7fd; }
+.job-succeeded { background: #ecfdf3; }
+.job-failed { background: #fff0ee; }
+.job-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; }
+.progress-track { height: 7px; background: #d8e1ee; border-radius: 99px; overflow: hidden; margin-top: 7px; }
+.progress-track div { height: 100%; background: #2f80ed; transition: width .25s ease; }
+.chart-card { margin-top: 12px; }
+@media (max-width: 1050px) {
+  .layout { grid-template-columns: 1fr; }
+  .page-grid { grid-template-columns: 1fr; }
+  header { align-items: flex-start; flex-direction: column; }
+}
